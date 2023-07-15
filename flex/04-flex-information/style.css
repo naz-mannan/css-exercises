@@ -1,5 +1,6 @@
 body {
   font-family: 'Courier New', Courier, monospace;
+  text-align: center;
 }
 
 img {
@@ -10,6 +11,7 @@ img {
 .title {
   font-size: 36px;
   font-weight: 900;
+  margin-bottom: 32px; /* Between Title and items */
 }
 
 /* do not edit this footer */
@@ -24,3 +26,22 @@ img {
   justify-content: center;
   background: #eee;
 }
+.bigcontainer {
+  display: flex;
+  justify-content: center;
+  gap: 52px;
+}
+
+.plant {
+  max-width: 200px;
+}
+
+/*
+Title was fixed simply with centered text-align
+
+Next is to create a container for the plants --> Allows for centering and setting the 52px gap requirement
+
+Nested containers for each plant is used to set max-width --> resulting in the flex wrap like text effect
+
+
+*/
