@@ -2,28 +2,70 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   height: 72px;
   background: darkmagenta;
   color: white;
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 900;
+  padding: 0 16px;
 }
 
 .footer {
   height: 72px;
   background: #eee;
   color: darkmagenta;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
 }
 
-.sidebar {
+.sidebar { /*Shares a big container flex box with .card (HTML) so that the space can be shared (getting cards on the right of the bar)*/
   width: 300px;
   background: royalblue;
   box-sizing: border-box;
+  flex-shrink: 0; 
+  padding: 16px; /*With the container and nested container, the sidebar should automatically take up the height of the container, letting it touch the footer without setting it specifically*/
 }
 
 .card {
   border: 1px solid #eee;
   box-shadow: 2px 4px 16px rgba(0,0,0,.06);
   border-radius: 4px;
+  width: 300px; /*Not setting a width does not give you the actual 'cards' which means the wrap will never happen. With width set, empty space can now be used by flex-wrap*/
+  padding: 16px;
+  margin: 16px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;  /*Moves the list closer to the upper left corner*/
+  padding: 0;
+}
+
+li {
+  margin-bottom: 16px; /* Allows for space underneath the list items*/
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+
+.container { /*'.body' in solutions, without this container being flex, the nested container with cards would not be able to take up the space to the right of the sidebar*/
+  display: flex;
+  flex: 1;
+}
+
+.container2 {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 32px;
 }
