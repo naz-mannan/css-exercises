@@ -5,6 +5,8 @@ body {
   margin: 0;
   overflow: hidden;
   font-family: Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
@@ -16,6 +18,7 @@ button {
   border: none;
   border-radius: 8px;
   background: #eee;
+  padding: 8px 16px;
 }
 
 input {
@@ -25,3 +28,40 @@ input {
   width: 400px;
   margin-bottom: 16px;
 }
+
+.left-links, .right-links { /*Solutions uses ul to apply link properties*/
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: #666; /*Found color in solutions*/
+  text-decoration: none;
+}
+
+.footer {  /*In solutions, some properties can be shared with header, possible redundance in the amount of flexboxes*/
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #eeeeee;
+  margin-top: auto;
+}
+
+.content {
+  /*flex: 1; --> Not in original code, but it is in solutions*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Extra space within the header and footer is apparent, code definitely could be cleaner*/
